@@ -4,15 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ቤተ ሊቃውንት</title>
+<meta name="description"
+content="ቤተ ሊቃውንት - የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተ ክርስቲያን የመንፈሳዊ ጥያቄና መልስ የጥሪ ማዕከል ድረ ገጽ።">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>ቤተ ሊቃውንት</title>
 
 <style>
 *{
   box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
@@ -20,10 +21,9 @@ html{
 }
 
 body{
-  margin:0;
-  font-family:"Noto Sans Ethiopic", sans-serif;
-  background:#fbf8ef;
-  color:#263b31;
+  font-family:"Noto Sans Ethiopic","Abyssinica SIL",Arial,sans-serif;
+  background:#f7f3e9;
+  color:#183b2b;
   line-height:1.8;
 }
 
@@ -31,84 +31,75 @@ a{
   text-decoration:none;
 }
 
-.container{
-  width:min(1100px,92%);
-  margin:auto;
+.topbar{
+  background:#173b2b;
+  color:#fff;
+  padding:8px 15px;
+  text-align:center;
+  font-size:14px;
 }
 
-/* HEADER */
 header{
-  background:#073d2b;
+  background:linear-gradient(135deg,#173b2b,#28543d);
   color:white;
+  padding:20px 15px 16px;
 }
 
-.header-main{
-  padding:18px 0;
-}
-
-.header-content{
-  display:flex;
-  align-items:center;
-  gap:15px;
+.header-inner{
+  max-width:1050px;
+  margin:auto;
+  text-align:center;
 }
 
 .logo{
-  width:70px;
-  height:70px;
+  width:115px;
+  height:115px;
   object-fit:contain;
-  background:white;
+  display:block;
+  margin:0 auto 8px;
   border-radius:50%;
-  padding:4px;
 }
 
 .brand{
-  flex:1;
-}
-
-.brand h1{
-  margin:0;
   font-size:34px;
   font-weight:900;
-  line-height:1.25;
+  color:#f2c75c;
+  line-height:1.3;
 }
 
-.brand p{
-  margin:5px 0 0;
-  font-size:14px;
-  line-height:1.7;
-  color:#f4ead2;
-}
-
-.main-call{
-  background:#c69a43;
-  color:white;
-  padding:10px 17px;
-  border-radius:10px;
-  font-weight:800;
-  white-space:nowrap;
+.subtitle{
+  max-width:850px;
+  margin:8px auto 0;
+  font-size:17px;
+  color:#fff;
+  font-weight:600;
 }
 
 nav{
-  background:#052f22;
+  background:#0f2d21;
+  padding:8px 12px;
 }
 
-.nav-content{
+.nav-inner{
+  max-width:1050px;
+  margin:auto;
   display:flex;
+  justify-content:center;
   align-items:center;
-  gap:5px;
+  gap:7px;
   flex-wrap:wrap;
 }
 
 nav a{
   color:white;
-  padding:10px 13px;
+  padding:8px 12px;
+  border-radius:8px;
   font-size:14px;
   font-weight:700;
 }
 
 nav a:hover{
-  background:#15543e;
-  border-radius:8px;
+  background:#28543d;
 }
 
 .language{
@@ -120,24 +111,119 @@ nav a:hover{
   border-radius:8px;
   padding:7px 9px;
   font-family:inherit;
+  font-weight:700;
 }
 
-/* HERO */
 .hero{
+  background:linear-gradient(135deg,#fffdf7,#eee5cf);
+  padding:45px 15px;
+}
+
+.hero-inner{
+  max-width:1050px;
+  margin:auto;
   text-align:center;
-  padding:70px 0;
-  background:
-    radial-gradient(circle at top,#f4e7c5,transparent 42%),
-    #fbf8ef;
 }
 
-.hero-logo{
-  width:85px;
-  height:85px;
-  object-fit:contain;
-  margin-bottom:15px;
+.hero h1{
+  color:#173b2b;
+  font-size:32px;
+  margin-bottom:12px;
 }
 
-.hero h2{
-  margin:0;
-  font-size:clamp
+.hero p{
+  max-width:720px;
+  margin:auto;
+  color:#4b5b52;
+  font-size:17px;
+}
+
+.question{
+  margin-top:25px;
+  background:white;
+  border:1px solid #ddd3bd;
+  border-radius:18px;
+  padding:25px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.question h2{
+  color:#173b2b;
+  font-size:22px;
+  margin-bottom:8px;
+}
+
+.question p{
+  margin-bottom:18px;
+}
+
+.main-call{
+  display:inline-block;
+  background:#c69a43;
+  color:white;
+  padding:12px 25px;
+  border-radius:12px;
+  font-size:25px;
+  font-weight:900;
+  box-shadow:0 5px 12px rgba(0,0,0,.15);
+}
+
+.main-call:hover{
+  background:#a97d2f;
+}
+
+section{
+  padding:45px 15px;
+}
+
+.container{
+  max-width:1050px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  color:#173b2b;
+  font-size:27px;
+  margin-bottom:25px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border:1px solid #ded5c3;
+  border-radius:15px;
+  padding:22px;
+  text-align:center;
+  box-shadow:0 5px 18px rgba(0,0,0,.06);
+}
+
+.card h3{
+  color:#173b2b;
+  margin-bottom:8px;
+  font-size:20px;
+}
+
+.card p{
+  color:#59655f;
+}
+
+.contact{
+  background:#173b2b;
+  color:white;
+  text-align:center;
+}
+
+.contact h2{
+  color:#f2c75c;
+}
+
+.contact-number{
+  display:inline-block;
+  margin-top:15px;
+  background:#
