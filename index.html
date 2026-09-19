@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description"
-    content="ቤተ ሊቃውንት — የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተ ክርስቲያን የመንፈሳዊ ጥያቄና መልስ የጥሪ ማዕከል ድረ ገጽ።">
-
+  <meta name="description" content="ቤተ ሊቃውንት — የመንፈሳዊ ጥያቄና መልስ የጥሪ ማዕከል።">
+  <meta name="theme-color" content="#173b2b">
   <title>ቤተ ሊቃውንት</title>
 
   <style>
@@ -36,6 +34,10 @@
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+    }
+
     /* HEADER */
     header {
       background: linear-gradient(135deg, #173b2b, #0d2b21);
@@ -56,6 +58,7 @@
       object-fit: contain;
       display: block;
       margin: 0 auto 15px;
+      border-radius: 50%;
     }
 
     .brand {
@@ -63,7 +66,6 @@
       font-weight: 900;
       color: #f3cf58;
       line-height: 1.35;
-      letter-spacing: 0;
     }
 
     .subtitle {
@@ -105,8 +107,7 @@
 
     /* HERO */
     .hero {
-      background:
-        linear-gradient(135deg, #fffdf7, #eee5cf);
+      background: linear-gradient(135deg, #fffdf7, #eee5cf);
       padding: 55px 16px;
       text-align: center;
     }
@@ -135,3 +136,340 @@
     .question-box {
       max-width: 800px;
       margin: 30px auto 0;
+      background: #ffffff;
+      border: 1px solid #ddd3bd;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    }
+
+    .question-box h2 {
+      color: #173b2b;
+      font-size: clamp(21px, 4vw, 28px);
+      margin-bottom: 10px;
+    }
+
+    .question-box p {
+      color: #59655f;
+      margin-bottom: 18px;
+    }
+
+    .main-call {
+      display: inline-block;
+      background: #c69a43;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 12px;
+      font-size: 25px;
+      font-weight: 900;
+      box-shadow: 0 5px 12px rgba(0,0,0,.15);
+    }
+
+    .main-call:hover {
+      background: #a97d2f;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 50px 16px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #173b2b;
+      font-size: clamp(25px, 5vw, 34px);
+      margin-bottom: 25px;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ded5c3;
+      border-radius: 15px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(0,0,0,.06);
+    }
+
+    .card h3 {
+      color: #173b2b;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #59655f;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #fffdf7;
+    }
+
+    .about-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      color: #4b5b52;
+      font-size: 18px;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #173b2b;
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: #f2c75c;
+      font-size: clamp(25px, 5vw, 34px);
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      max-width: 700px;
+      margin: 0 auto 15px;
+    }
+
+    .contact-number {
+      display: inline-block;
+      margin-top: 15px;
+      background: #f2c75c;
+      color: #173b2b;
+      padding: 10px 28px;
+      border-radius: 12px;
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0b241b;
+      color: white;
+      text-align: center;
+      padding: 20px 15px;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .logo {
+        width: 125px;
+        height: 125px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      header {
+        padding: 22px 12px;
+      }
+
+      .logo {
+        width: 110px;
+        height: 110px;
+      }
+
+      .nav-inner {
+        gap: 4px;
+        padding: 8px;
+      }
+
+      nav a {
+        padding: 8px 10px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 40px 14px;
+      }
+
+      section {
+        padding: 38px 14px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .question-box {
+        padding: 20px;
+      }
+
+      .main-call {
+        font-size: 22px;
+        padding: 11px 20px;
+      }
+
+      .contact-number {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="home">
+    <div class="header-inner">
+
+      <!-- logo.png ከ index.html ጋር በተመሳሳይ repository ውስጥ ነው -->
+      <img
+        class="logo"
+        src="logo.png"
+        alt="የቤተ ሊቃውንት ምልክት"
+      >
+
+      <div class="brand">ቤተ ሊቃውንት</div>
+
+      <p class="subtitle">
+        የመንፈሳዊ ጥያቄና መልስ የጥሪ ማዕከል
+      </p>
+
+    </div>
+  </header>
+
+  <nav aria-label="ዋና ማውጫ">
+    <div class="nav-inner">
+      <a href="#home">መነሻ</a>
+      <a href="#about">ስለ እኛ</a>
+      <a href="#services">አገልግሎቶች</a>
+      <a href="#contact">ያግኙን</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-inner">
+
+        <h1>መንፈሳዊ ጥያቄዎን ይጠይቁ</h1>
+
+        <p>
+          በእምነት፣ በትምህርተ ክርስቲያንና
+          በመንፈሳዊ ሕይወት ዙሪያ ጥያቄዎችዎን
+          ለመጠየቅ ወደ ቤተ ሊቃውንት ይደውሉ።
+        </p>
+
+        <div class="question-box">
+
+          <h2>ጥያቄ አለዎት?</h2>
+
+          <p>
+            በቀጥታ የጥሪ ማዕከሉን ያግኙ።
+          </p>
+
+          <a class="main-call" href="tel:2721">
+            ☎ 2721
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about" class="about">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          ስለ ቤተ ሊቃውንት
+        </h2>
+
+        <div class="about-box">
+
+          <p>
+            ቤተ ሊቃውንት በመንፈሳዊ ጥያቄና መልስ
+            አገልግሎት ለሕዝበ ክርስቲያኑ መረጃና
+            መመሪያ ለመስጠት የተዘጋጀ መድረክ ነው።
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="services">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          አገልግሎቶች
+        </h2>
+
+        <div class="cards">
+
+          <article class="card">
+            <h3>ጥያቄና መልስ</h3>
+            <p>
+              በመንፈሳዊ ሕይወትና በቤተ ክርስቲያን
+              ትምህርት ዙሪያ ጥያቄዎን ያቅርቡ።
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>መንፈሳዊ መመሪያ</h3>
+            <p>
+              ለሚያስፈልግዎ መንፈሳዊ መረጃና
+              መመሪያ ይጠይቁ።
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>የጥሪ አገልግሎት</h3>
+            <p>
+              በ2721 ቁጥር በመደወል
+              አገልግሎቱን ያግኙ።
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="contact" class="contact">
+
+      <div class="container">
+
+        <h2>ያግኙን</h2>
+
+        <p>
+          ለጥያቄዎችዎ ወደ የጥሪ ማዕከሉ ይደውሉ።
+        </p>
+
+        <a class="contact-number" href="tel:2721">
+          ☎ 2721
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      © ቤተ ሊቃውንት — መንፈሳዊ ጥያቄና መልስ
+    </p>
+  </footer>
+
+</body>
+</html>
