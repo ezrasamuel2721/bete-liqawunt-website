@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ቤተ ሊቃውንት — የመንፈሳዊ ጥያቄና መልስ የጥሪ ማዕከል።">
-  <meta name="theme-color" content="#173b2b">
-  <title>ቤተ ሊቃውንት</title>
+
+  <title>ቤተ ሊቃውንት | Bete Likawunt</title>
+
+  <meta
+    name="description"
+    content="ቤተ ሊቃውንት — የመንፈሳዊ እውቀት፣ የእምነት፣ የተስፋ እና የጥያቄና መልስ መድረክ።"
+  >
 
   <style>
     * {
@@ -32,10 +36,45 @@
 
     a {
       text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
     }
 
     img {
       max-width: 100%;
+      display: block;
+    }
+
+    /* LANGUAGE BAR */
+    .language-bar {
+      background: #08271d;
+      padding: 8px 15px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .language-buttons {
+      display: flex;
+      gap: 6px;
+    }
+
+    .language-buttons button {
+      background: transparent;
+      color: white;
+      border: 1px solid #d5a928;
+      border-radius: 7px;
+      padding: 5px 11px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .language-buttons button.active,
+    .language-buttons button:hover {
+      background: #d5a928;
+      color: #08271d;
     }
 
     /* HEADER */
@@ -56,7 +95,6 @@
       width: 150px;
       height: 150px;
       object-fit: contain;
-      display: block;
       margin: 0 auto 15px;
       border-radius: 50%;
     }
@@ -65,21 +103,24 @@
       font-size: clamp(32px, 7vw, 54px);
       font-weight: 900;
       color: #f3cf58;
-      line-height: 1.35;
     }
 
-    .subtitle {
-      max-width: 900px;
-      margin: 12px auto 0;
+    .church-name {
+      margin-top: 7px;
       font-size: clamp(16px, 3vw, 21px);
-      font-weight: 600;
-      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .tagline {
+      max-width: 850px;
+      margin: 10px auto 0;
+      font-size: clamp(15px, 3vw, 19px);
+      color: white;
     }
 
     /* NAVIGATION */
     nav {
       background: #0b241b;
-      border-bottom: 1px solid rgba(255,255,255,.1);
     }
 
     .nav-inner {
@@ -87,7 +128,6 @@
       margin: auto;
       display: flex;
       justify-content: center;
-      align-items: center;
       gap: 8px;
       flex-wrap: wrap;
       padding: 10px 14px;
@@ -97,12 +137,12 @@
       color: white;
       padding: 9px 15px;
       border-radius: 8px;
-      font-size: 15px;
       font-weight: 700;
     }
 
     nav a:hover {
-      background: #28543d;
+      background: #d5a928;
+      color: #08271d;
     }
 
     /* HERO */
@@ -120,23 +160,21 @@
     .hero h1 {
       color: #173b2b;
       font-size: clamp(28px, 6vw, 46px);
-      line-height: 1.45;
       margin-bottom: 15px;
       font-weight: 900;
     }
 
-    .hero p {
-      max-width: 760px;
+    .hero-description {
+      max-width: 800px;
       margin: auto;
       color: #4b5b52;
       font-size: clamp(17px, 3.5vw, 21px);
-      font-weight: 500;
     }
 
     .question-box {
       max-width: 800px;
       margin: 30px auto 0;
-      background: #ffffff;
+      background: white;
       border: 1px solid #ddd3bd;
       border-radius: 18px;
       padding: 25px;
@@ -145,7 +183,6 @@
 
     .question-box h2 {
       color: #173b2b;
-      font-size: clamp(21px, 4vw, 28px);
       margin-bottom: 10px;
     }
 
@@ -154,7 +191,7 @@
       margin-bottom: 18px;
     }
 
-    .main-call {
+    .call-button {
       display: inline-block;
       background: #c69a43;
       color: white;
@@ -165,13 +202,13 @@
       box-shadow: 0 5px 12px rgba(0,0,0,.15);
     }
 
-    .main-call:hover {
+    .call-button:hover {
       background: #a97d2f;
     }
 
     /* SECTIONS */
     section {
-      padding: 50px 16px;
+      padding: 55px 16px;
     }
 
     .container {
@@ -183,11 +220,36 @@
       text-align: center;
       color: #173b2b;
       font-size: clamp(25px, 5vw, 34px);
-      margin-bottom: 25px;
+      margin-bottom: 22px;
+      font-weight: 900;
     }
 
-    /* CARDS */
+    .section-description {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      color: #4b5b52;
+      font-size: 18px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #fffdf7;
+    }
+
+    .about-box {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* SERVICES */
+    .services {
+      background: #f7f3e8;
+    }
+
     .cards {
+      margin-top: 30px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
@@ -197,14 +259,14 @@
       background: white;
       border: 1px solid #ded5c3;
       border-radius: 15px;
-      padding: 22px;
+      padding: 25px 20px;
       text-align: center;
       box-shadow: 0 5px 18px rgba(0,0,0,.06);
     }
 
     .card h3 {
       color: #173b2b;
-      margin-bottom: 8px;
+      margin-bottom: 9px;
       font-size: 20px;
     }
 
@@ -212,17 +274,30 @@
       color: #59655f;
     }
 
-    /* ABOUT */
-    .about {
+    /* SUPPORT */
+    .support {
       background: #fffdf7;
     }
 
-    .about-box {
+    .support-box {
       max-width: 850px;
-      margin: auto;
+      margin: 30px auto 0;
+      padding: 30px 22px;
       text-align: center;
-      color: #4b5b52;
-      font-size: 18px;
+      background: #f7f3e8;
+      border: 1px solid #ded5c3;
+      border-radius: 18px;
+    }
+
+    .support-box h3 {
+      color: #173b2b;
+      margin-bottom: 10px;
+      font-size: 23px;
+    }
+
+    .support-box p {
+      color: #59655f;
+      margin-bottom: 20px;
     }
 
     /* CONTACT */
@@ -232,35 +307,39 @@
       text-align: center;
     }
 
-    .contact h2 {
-      color: #f2c75c;
-      font-size: clamp(25px, 5vw, 34px);
-      margin-bottom: 12px;
+    .contact .section-title {
+      color: #f3cf58;
     }
 
-    .contact p {
-      max-width: 700px;
-      margin: 0 auto 15px;
+    .contact .section-description {
+      color: white;
     }
 
-    .contact-number {
-      display: inline-block;
-      margin-top: 15px;
-      background: #f2c75c;
-      color: #173b2b;
-      padding: 10px 28px;
-      border-radius: 12px;
-      font-size: 28px;
-      font-weight: 900;
+    .contact-details {
+      margin: 25px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .email-link {
+      color: #f3cf58;
+      font-weight: 700;
+      word-break: break-word;
     }
 
     /* FOOTER */
     footer {
-      background: #0b241b;
+      background: #08271d;
       color: white;
       text-align: center;
       padding: 20px 15px;
       font-size: 14px;
+    }
+
+    footer strong {
+      color: #f3cf58;
     }
 
     /* MOBILE */
@@ -276,6 +355,10 @@
     }
 
     @media (max-width: 520px) {
+      .language-bar {
+        justify-content: center;
+      }
+
       header {
         padding: 22px 12px;
       }
@@ -300,24 +383,15 @@
       }
 
       section {
-        padding: 38px 14px;
+        padding: 42px 14px;
       }
 
       .cards {
         grid-template-columns: 1fr;
       }
 
-      .question-box {
-        padding: 20px;
-      }
-
-      .main-call {
+      .call-button {
         font-size: 22px;
-        padding: 11px 20px;
-      }
-
-      .contact-number {
-        font-size: 24px;
       }
     }
   </style>
@@ -325,151 +399,109 @@
 
 <body>
 
-  <header id="home">
+  <!-- LANGUAGE SWITCHER -->
+  <div class="language-bar">
+    <div class="language-buttons">
+      <button id="amBtn" class="active" onclick="setLanguage('am')">
+        አማ
+      </button>
+
+      <button id="enBtn" onclick="setLanguage('en')">
+        EN
+      </button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
     <div class="header-inner">
 
-      <!-- logo.png ከ index.html ጋር በተመሳሳይ repository ውስጥ ነው -->
       <img
-        class="logo"
         src="logo.png"
-        alt="የቤተ ሊቃውንት ምልክት"
+        alt="ቤተ ሊቃውንት Logo"
+        class="logo"
       >
 
-      <div class="brand">ቤተ ሊቃውንት</div>
+      <div
+        class="brand"
+        data-am="ቤተ ሊቃውንት"
+        data-en="Bete Likawunt"
+      >
+        ቤተ ሊቃውንት
+      </div>
 
-      <p class="subtitle">
-        የመንፈሳዊ ጥያቄና መልስ የጥሪ ማዕከል
+      <div
+        class="church-name"
+        data-am="የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን"
+        data-en="Ethiopian Orthodox Tewahedo Church"
+      >
+        የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን
+      </div>
+
+      <p
+        class="tagline"
+        data-am="የእምነት፣ የመንፈሳዊ እውቀትና የተስፋ መድረክ"
+        data-en="A platform for faith, spiritual knowledge and hope"
+      >
+        የእምነት፣ የመንፈሳዊ እውቀትና የተስፋ መድረክ
       </p>
 
     </div>
   </header>
 
-  <nav aria-label="ዋና ማውጫ">
+  <!-- NAVIGATION -->
+  <nav>
     <div class="nav-inner">
-      <a href="#home">መነሻ</a>
-      <a href="#about">ስለ እኛ</a>
-      <a href="#services">አገልግሎቶች</a>
-      <a href="#contact">ያግኙን</a>
+
+      <a
+        href="#home"
+        data-am="መነሻ"
+        data-en="Home"
+      >
+        መነሻ
+      </a>
+
+      <a
+        href="#about"
+        data-am="ስለ እኛ"
+        data-en="About"
+      >
+        ስለ እኛ
+      </a>
+
+      <a
+        href="#services"
+        data-am="አገልግሎቶች"
+        data-en="Services"
+      >
+        አገልግሎቶች
+      </a>
+
+      <a
+        href="#support"
+        data-am="ድጋፍ"
+        data-en="Support"
+      >
+        ድጋፍ
+      </a>
+
+      <a
+        href="#contact"
+        data-am="ያግኙን"
+        data-en="Contact"
+      >
+        ያግኙን
+      </a>
+
     </div>
   </nav>
 
   <main>
 
-    <section class="hero">
+    <!-- HOME -->
+    <section id="home" class="hero">
       <div class="hero-inner">
 
-        <h1>መንፈሳዊ ጥያቄዎን ይጠይቁ</h1>
-
-        <p>
-          በእምነት፣ በትምህርተ ክርስቲያንና
-          በመንፈሳዊ ሕይወት ዙሪያ ጥያቄዎችዎን
-          ለመጠየቅ ወደ ቤተ ሊቃውንት ይደውሉ።
-        </p>
-
-        <div class="question-box">
-
-          <h2>ጥያቄ አለዎት?</h2>
-
-          <p>
-            በቀጥታ የጥሪ ማዕከሉን ያግኙ።
-          </p>
-
-          <a class="main-call" href="tel:2721">
-            ☎ 2721
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section id="about" class="about">
-
-      <div class="container">
-
-        <h2 class="section-title">
-          ስለ ቤተ ሊቃውንት
-        </h2>
-
-        <div class="about-box">
-
-          <p>
-            ቤተ ሊቃውንት በመንፈሳዊ ጥያቄና መልስ
-            አገልግሎት ለሕዝበ ክርስቲያኑ መረጃና
-            መመሪያ ለመስጠት የተዘጋጀ መድረክ ነው።
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section id="services">
-
-      <div class="container">
-
-        <h2 class="section-title">
-          አገልግሎቶች
-        </h2>
-
-        <div class="cards">
-
-          <article class="card">
-            <h3>ጥያቄና መልስ</h3>
-            <p>
-              በመንፈሳዊ ሕይወትና በቤተ ክርስቲያን
-              ትምህርት ዙሪያ ጥያቄዎን ያቅርቡ።
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>መንፈሳዊ መመሪያ</h3>
-            <p>
-              ለሚያስፈልግዎ መንፈሳዊ መረጃና
-              መመሪያ ይጠይቁ።
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>የጥሪ አገልግሎት</h3>
-            <p>
-              በ2721 ቁጥር በመደወል
-              አገልግሎቱን ያግኙ።
-            </p>
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section id="contact" class="contact">
-
-      <div class="container">
-
-        <h2>ያግኙን</h2>
-
-        <p>
-          ለጥያቄዎችዎ ወደ የጥሪ ማዕከሉ ይደውሉ።
-        </p>
-
-        <a class="contact-number" href="tel:2721">
-          ☎ 2721
-        </a>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer>
-    <p>
-      © ቤተ ሊቃውንት — መንፈሳዊ ጥያቄና መልስ
-    </p>
-  </footer>
-
-</body>
-</html>
+        <h1
+          data-am="መንፈሳዊ ጥያቄዎን ይጠይቁ"
+          data-en="Ask Your Spiritual Questions
