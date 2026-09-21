@@ -1,507 +1,179 @@
 <!DOCTYPE html>
 <html lang="am">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>ቤተ ሊቃውንት | Bete Likawunt</title>
-
-  <meta
-    name="description"
-    content="ቤተ ሊቃውንት — የመንፈሳዊ እውቀት፣ የእምነት፣ የተስፋ እና የጥያቄና መልስ መድረክ።"
-  >
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family:
-        "Noto Sans Ethiopic",
-        "Abyssinica SIL",
-        "Nyala",
-        Arial,
-        sans-serif;
-      background: #f7f3e8;
-      color: #173b2b;
-      line-height: 1.8;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* LANGUAGE BAR */
-    .language-bar {
-      background: #08271d;
-      padding: 8px 15px;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .language-buttons {
-      display: flex;
-      gap: 6px;
-    }
-
-    .language-buttons button {
-      background: transparent;
-      color: white;
-      border: 1px solid #d5a928;
-      border-radius: 7px;
-      padding: 5px 11px;
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    .language-buttons button.active,
-    .language-buttons button:hover {
-      background: #d5a928;
-      color: #08271d;
-    }
-
-    /* HEADER */
-    header {
-      background: linear-gradient(135deg, #173b2b, #0d2b21);
-      color: white;
-      padding: 28px 16px;
-      border-bottom: 4px solid #d5a928;
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .logo {
-      width: 150px;
-      height: 150px;
-      object-fit: contain;
-      margin: 0 auto 15px;
-      border-radius: 50%;
-    }
-
-    .brand {
-      font-size: clamp(32px, 7vw, 54px);
-      font-weight: 900;
-      color: #f3cf58;
-    }
-
-    .church-name {
-      margin-top: 7px;
-      font-size: clamp(16px, 3vw, 21px);
-      font-weight: 700;
-    }
-
-    .tagline {
-      max-width: 850px;
-      margin: 10px auto 0;
-      font-size: clamp(15px, 3vw, 19px);
-      color: white;
-    }
-
-    /* NAVIGATION */
-    nav {
-      background: #0b241b;
-    }
-
-    .nav-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      padding: 10px 14px;
-    }
-
-    nav a {
-      color: white;
-      padding: 9px 15px;
-      border-radius: 8px;
-      font-weight: 700;
-    }
-
-    nav a:hover {
-      background: #d5a928;
-      color: #08271d;
-    }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #fffdf7, #eee5cf);
-      padding: 55px 16px;
-      text-align: center;
-    }
-
-    .hero-inner {
-      max-width: 950px;
-      margin: auto;
-    }
-
-    .hero h1 {
-      color: #173b2b;
-      font-size: clamp(28px, 6vw, 46px);
-      margin-bottom: 15px;
-      font-weight: 900;
-    }
-
-    .hero-description {
-      max-width: 800px;
-      margin: auto;
-      color: #4b5b52;
-      font-size: clamp(17px, 3.5vw, 21px);
-    }
-
-    .question-box {
-      max-width: 800px;
-      margin: 30px auto 0;
-      background: white;
-      border: 1px solid #ddd3bd;
-      border-radius: 18px;
-      padding: 25px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.08);
-    }
-
-    .question-box h2 {
-      color: #173b2b;
-      margin-bottom: 10px;
-    }
-
-    .question-box p {
-      color: #59655f;
-      margin-bottom: 18px;
-    }
-
-    .call-button {
-      display: inline-block;
-      background: #c69a43;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 12px;
-      font-size: 25px;
-      font-weight: 900;
-      box-shadow: 0 5px 12px rgba(0,0,0,.15);
-    }
-
-    .call-button:hover {
-      background: #a97d2f;
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 55px 16px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      color: #173b2b;
-      font-size: clamp(25px, 5vw, 34px);
-      margin-bottom: 22px;
-      font-weight: 900;
-    }
-
-    .section-description {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      color: #4b5b52;
-      font-size: 18px;
-    }
-
-    /* ABOUT */
-    .about {
-      background: #fffdf7;
-    }
-
-    .about-box {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-
-    /* SERVICES */
-    .services {
-      background: #f7f3e8;
-    }
-
-    .cards {
-      margin-top: 30px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid #ded5c3;
-      border-radius: 15px;
-      padding: 25px 20px;
-      text-align: center;
-      box-shadow: 0 5px 18px rgba(0,0,0,.06);
-    }
-
-    .card h3 {
-      color: #173b2b;
-      margin-bottom: 9px;
-      font-size: 20px;
-    }
-
-    .card p {
-      color: #59655f;
-    }
-
-    /* SUPPORT */
-    .support {
-      background: #fffdf7;
-    }
-
-    .support-box {
-      max-width: 850px;
-      margin: 30px auto 0;
-      padding: 30px 22px;
-      text-align: center;
-      background: #f7f3e8;
-      border: 1px solid #ded5c3;
-      border-radius: 18px;
-    }
-
-    .support-box h3 {
-      color: #173b2b;
-      margin-bottom: 10px;
-      font-size: 23px;
-    }
-
-    .support-box p {
-      color: #59655f;
-      margin-bottom: 20px;
-    }
-
-    /* CONTACT */
-    .contact {
-      background: #173b2b;
-      color: white;
-      text-align: center;
-    }
-
-    .contact .section-title {
-      color: #f3cf58;
-    }
-
-    .contact .section-description {
-      color: white;
-    }
-
-    .contact-details {
-      margin: 25px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .email-link {
-      color: #f3cf58;
-      font-weight: 700;
-      word-break: break-word;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #08271d;
-      color: white;
-      text-align: center;
-      padding: 20px 15px;
-      font-size: 14px;
-    }
-
-    footer strong {
-      color: #f3cf58;
-    }
-
-    /* MOBILE */
-    @media (max-width: 800px) {
-      .cards {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .logo {
-        width: 125px;
-        height: 125px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .language-bar {
-        justify-content: center;
-      }
-
-      header {
-        padding: 22px 12px;
-      }
-
-      .logo {
-        width: 110px;
-        height: 110px;
-      }
-
-      .nav-inner {
-        gap: 4px;
-        padding: 8px;
-      }
-
-      nav a {
-        padding: 8px 10px;
-        font-size: 14px;
-      }
-
-      .hero {
-        padding: 40px 14px;
-      }
-
-      section {
-        padding: 42px 14px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .call-button {
-        font-size: 22px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- LANGUAGE SWITCHER -->
-  <div class="language-bar">
-    <div class="language-buttons">
-      <button id="amBtn" class="active" onclick="setLanguage('am')">
-        አማ
-      </button>
-
-      <button id="enBtn" onclick="setLanguage('en')">
-        EN
-      </button>
-    </div>
-  </div>
-
-  <!-- HEADER -->
-  <header>
-    <div class="header-inner">
-
-      <img
-        src="logo.png"
-        alt="ቤተ ሊቃውንት Logo"
-        class="logo"
-      >
-
-      <div
-        class="brand"
-        data-am="ቤተ ሊቃውንት"
-        data-en="Bete Likawunt"
-      >
-        ቤተ ሊቃውንት
-      </div>
-
-      <div
-        class="church-name"
-        data-am="የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን"
-        data-en="Ethiopian Orthodox Tewahedo Church"
-      >
-        የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን
-      </div>
-
-      <p
-        class="tagline"
-        data-am="የእምነት፣ የመንፈሳዊ እውቀትና የተስፋ መድረክ"
-        data-en="A platform for faith, spiritual knowledge and hope"
-      >
-        የእምነት፣ የመንፈሳዊ እውቀትና የተስፋ መድረክ
-      </p>
-
-    </div>
-  </header>
-
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="nav-inner">
-
-      <a
-        href="#home"
-        data-am="መነሻ"
-        data-en="Home"
-      >
-        መነሻ
-      </a>
-
-      <a
-        href="#about"
-        data-am="ስለ እኛ"
-        data-en="About"
-      >
-        ስለ እኛ
-      </a>
-
-      <a
-        href="#services"
-        data-am="አገልግሎቶች"
-        data-en="Services"
-      >
-        አገልግሎቶች
-      </a>
-
-      <a
-        href="#support"
-        data-am="ድጋፍ"
-        data-en="Support"
-      >
-        ድጋፍ
-      </a>
-
-      <a
-        href="#contact"
-        data-am="ያግኙን"
-        data-en="Contact"
-      >
-        ያግኙን
-      </a>
-
-    </div>
-  </nav>
-
-  <main>
-
-    <!-- HOME -->
-    <section id="home" class="hero">
-      <div class="hero-inner">
-
-        <h1
-          data-am="መንፈሳዊ ጥያቄዎን ይጠይቁ"
-          data-en="Ask Your Spiritual Questions
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ቤተ ሊቃውንት | Bete Likawunt</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,"Noto Sans Ethiopic",sans-serif;
+  background:#f6f3e9;
+  color:#26352b;
+  line-height:1.7;
+}
+
+header{
+  background:linear-gradient(135deg,#0d5c3b,#174f36);
+  color:white;
+  padding:18px 15px;
+  text-align:center;
+}
+
+.brand{
+  font-size:28px;
+  font-weight:bold;
+  margin-bottom:4px;
+}
+
+.subtitle{
+  font-size:15px;
+  opacity:.95;
+}
+
+.number{
+  display:inline-block;
+  margin-top:10px;
+  background:#d4af37;
+  color:#173d2c;
+  padding:5px 18px;
+  border-radius:20px;
+  font-size:20px;
+  font-weight:bold;
+}
+
+nav{
+  background:white;
+  padding:10px;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  flex-wrap:wrap;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+nav button{
+  border:0;
+  background:#0d5c3b;
+  color:white;
+  padding:9px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:14px;
+}
+
+nav button:hover{
+  background:#174f36;
+}
+
+.lang{
+  background:#d4af37!important;
+  color:#173d2c!important;
+  font-weight:bold;
+}
+
+main{
+  max-width:900px;
+  margin:auto;
+  padding:20px 15px 50px;
+}
+
+.hero{
+  text-align:center;
+  padding:35px 15px;
+}
+
+.hero h1{
+  color:#0d5c3b;
+  font-size:31px;
+  margin-bottom:8px;
+}
+
+.hero p{
+  font-size:18px;
+}
+
+.call{
+  display:inline-block;
+  margin-top:18px;
+  background:#d4af37;
+  color:#173d2c;
+  text-decoration:none;
+  padding:12px 30px;
+  border-radius:30px;
+  font-weight:bold;
+  font-size:20px;
+}
+
+.card{
+  background:white;
+  border-radius:14px;
+  padding:22px;
+  margin:18px 0;
+  box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.card h2{
+  color:#0d5c3b;
+  margin-bottom:12px;
+}
+
+label{
+  display:block;
+  margin-top:12px;
+  margin-bottom:5px;
+  font-weight:bold;
+}
+
+input,textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #c9c9c9;
+  border-radius:8px;
+  font-size:16px;
+  font-family:inherit;
+}
+
+textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.submit{
+  width:100%;
+  margin-top:16px;
+  padding:13px;
+  border:0;
+  border-radius:9px;
+  background:#0d5c3b;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.submit:hover{
+  background:#174f36;
+}
+
+.message{
+  display:none;
+  margin-top:14px;
+  padding:12px;
+  border-radius:8px;
+  text-align:center;
+  font-weight:bold;
+}
+
+.success{
+  display:block;
+  background:#e4f5e9;
+  color:#176b
